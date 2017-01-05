@@ -10,10 +10,16 @@
 # CMHW
 /sys/devices/virtual/timed_output/vibrator/voltage_level u:object_r:vibeamp_sysfs:s0
 
+# Encryption
+/dev/block/bootdevice/by-name/extra         u:object_r:forceencrypt_block_device:s0
+
 # Fingerprint
 /dev/htc_smi                                u:object_r:fpc1155_device:s0
 /data/fpc(/.*)?                             u:object_r:fingerprintd_data_file:s0
 /sys/devices/soc/soc:fp_fpc1155(/.*)?       u:object_r:sysfs_fingerprint:s0
+
+# Gesture
+/sys/devices/virtual/htc_sensorhub/sensor_hub/gesture_motion    u:object_r:sysfs_gesture:s0
 
 # Radio
 /dev/radio(/.*)?                            u:object_r:radio_data_file:s0
